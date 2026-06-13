@@ -3,7 +3,7 @@ from zoneinfo import ZoneInfo
 
 # ========== 你只需要改这里就行 ==========
 # 上次更新日期，格式：年-月-日（北京时间）
-LAST_UPDATE_DATE = "2025-06-13"
+LAST_UPDATE_DATE = "2026-06-13"
 # 徽章显示的文字前缀
 LABEL_TEXT = "距离上次更新"
 # 徽章后缀
