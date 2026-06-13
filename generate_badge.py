@@ -3,14 +3,14 @@ from zoneinfo import ZoneInfo
 
 # ========== 你只需要改这里就行 ==========
 # 上次更新日期，格式：年-月-日（北京时间）
-LAST_UPDATE_DATE = "2026-06-13"
+LAST_UPDATE_DATE = "2025-01-20"
 # 徽章显示的文字前缀
 LABEL_TEXT = "距离上次更新"
 # 徽章后缀
 SUFFIX_TEXT = "天"
 # 徽章尺寸与样式
-BADGE_WIDTH = 220
-BADGE_HEIGHT = 50
+BADGE_WIDTH = 440
+BADGE_HEIGHT = 100
 BG_COLOR = "#2c3e50"
 TEXT_COLOR = "#ffffff"
 FONT_SIZE = 18
@@ -44,6 +44,3 @@ svg_content = f'''<svg width="{BADGE_WIDTH}" height="{BADGE_HEIGHT}" xmlns="http
 # 保存为图片文件
 with open("badge.svg", "w", encoding="utf-8") as f:
     f.write(svg_content)
-
-import cairosvg
-cairosvg.svg2png(bytestring=svg_content.encode("utf-8"), write_to="badge.png")
