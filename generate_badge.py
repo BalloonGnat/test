@@ -5,13 +5,13 @@ from zoneinfo import ZoneInfo
 # 上次更新日期，格式：年-月-日（北京时间）
 LAST_UPDATE_DATE = "2025-01-20"
 # 徽章显示的文字前缀
-LABEL_TEXT = "距离上次更新"
+LABEL_TEXT = "已拖更"
 # 徽章后缀
 SUFFIX_TEXT = "天"
 # 徽章尺寸与样式
-BADGE_WIDTH = 440
-BADGE_HEIGHT = 100
-BG_COLOR = "#2c3e50"
+BADGE_WIDTH = 220
+BADGE_HEIGHT = 50
+BG_COLOR = "#329a82"
 TEXT_COLOR = "#ffffff"
 FONT_SIZE = 18
 # =======================================
