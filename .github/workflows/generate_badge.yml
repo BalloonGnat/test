@@ -1,0 +1,36 @@
+name: 自动更新天数徽章
+
+on:
+  # 每天北京时间 00:05 自动运行（UTC时间 16:05）
+  schedule:
+    - cron: "5 16 * * *"
+  # 你手动修改脚本后自动触发
+  push:
+    paths:
+      - generate_badge.py
+  # 支持在网页手动触发运行
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: 安装依赖
+          run: pip install cairosvg
+
+      - name: 运行脚本生成图片
+        run: python generate_badge.py
+
+      - name: 提交并更新图片
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add badge.svg
+          git diff --quiet && git diff --staged --quiet || (git commit -m "自动更新天数徽章" && git push)
